@@ -30,7 +30,7 @@ module.exports = function(fileName) {
       return;
     }
 
-    var content = file.contents.toString('utf8').replace(/\r?\n/g,'').replace(/'/g,'\\\'');
+    var content = file.contents.toString('utf8').replace(/\r?\n/g,'').replace(/'/g,'\\\'').replace(/\t/g,'');
 
     // 设置最后修改时间。
     if (!latestMod || file.stat && file.stat.mtime > latestMod) {
